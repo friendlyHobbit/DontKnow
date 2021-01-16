@@ -60,9 +60,9 @@ public class FirstPersonCamera : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
+        if (Input.GetKeyDown(KeyCode.G) && isGrounded == true)
         {
-            print("space pressed");
+        //    print("space pressed");
             rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
 
             isGrounded = false;
@@ -71,7 +71,7 @@ public class FirstPersonCamera : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        print(collision.collider.gameObject.tag);
+    //    print(collision.collider.gameObject.tag);
         if (collision.collider.gameObject.tag == "walkable")
         {
             isGrounded = true;

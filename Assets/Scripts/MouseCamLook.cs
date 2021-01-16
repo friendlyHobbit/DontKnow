@@ -26,6 +26,8 @@ public class MouseCamLook : MonoBehaviour {
     // smooth the mouse moving
     private Vector2 smoothV;
 
+    private float rotX;
+
 	// Use this for initialization
 	void Start () {
         character = this.transform.parent.gameObject;
@@ -39,14 +41,17 @@ public class MouseCamLook : MonoBehaviour {
         // the interpolated float result between the two float values
         smoothV.x = Mathf.Lerp(smoothV.x, md.x, 1f / smoothing);
         smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1f / smoothing);
+
+        rotX += smoothV.y;
+    
+        // clamp the vertical rotation
+        rotX = Mathf.Clamp(rotX, minTurnAngle, maxTurnAngle);
         // incrementally add to the camera look
         mouseLook += smoothV;
 
-        // clamp the vertical rotation
-        mouseLook.x = Mathf.Clamp(mouseLook.x, minTurnAngle, maxTurnAngle);
 
         // vector3.right means the x-axis
-        transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
+        transform.eulerAngles = new Vector3(-rotX, transform.eulerAngles.y, 0);
         character.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, character.transform.up);
     }
 }
