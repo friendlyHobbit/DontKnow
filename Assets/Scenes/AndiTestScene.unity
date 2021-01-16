@@ -121,25 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &38454213 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2523355564524816077, guid: 03b74186cbb44c54880c5e653d0b6fd5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1366401616}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &38454215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 38454213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 166efdb032fa85be1a1a5321dcf1311a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!1 &806498824
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +135,7 @@ GameObject:
   - component: {fileID: 806498825}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: walkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -311,8 +292,7 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2523355564524816084, guid: 03b74186cbb44c54880c5e653d0b6fd5, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03b74186cbb44c54880c5e653d0b6fd5, type: 3}
 --- !u!1 &1539911505
 GameObject:
