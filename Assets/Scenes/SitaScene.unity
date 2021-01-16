@@ -213,6 +213,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!54 &750539440 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 2523355564524816082, guid: 03b74186cbb44c54880c5e653d0b6fd5,
+    type: 3}
+  m_PrefabInstance: {fileID: 2523355565258544226}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &824672884
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,7 +512,7 @@ GameObject:
   - component: {fileID: 2139176193}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: walkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -598,6 +604,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2523355564524816082, guid: 03b74186cbb44c54880c5e653d0b6fd5,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523355564524816084, guid: 03b74186cbb44c54880c5e653d0b6fd5,
+        type: 3}
+      propertyPath: jumpPower
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523355564524816084, guid: 03b74186cbb44c54880c5e653d0b6fd5,
+        type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 750539440}
     - target: {fileID: 2523355564524816086, guid: 03b74186cbb44c54880c5e653d0b6fd5,
         type: 3}
       propertyPath: m_LocalPosition.x

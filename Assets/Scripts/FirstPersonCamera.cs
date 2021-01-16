@@ -10,17 +10,24 @@ public class FirstPersonCamera : MonoBehaviour
     public float minTurnAngle = -90.0f;
     public float maxTurnAngle = 90.0f;
     private float rotX;
-    
+
+    // for jumping
+    Rigidbody rb;
+    public float jumpPower;
+    bool isGrounded;
 
     void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update ()
     {
         KeyboardMovement();
+        Jump();
     }
 
     void LateUpdate ()
@@ -49,5 +56,25 @@ public class FirstPersonCamera : MonoBehaviour
         dir.z = Input.GetAxis("Vertical");
     
         transform.Translate(dir * moveSpeed * Time.deltaTime);
+    }
+
+    void Jump()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
+        {
+            print("space pressed");
+            rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
+
+            isGrounded = false;
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        print(collision.collider.gameObject.tag);
+        if (collision.collider.gameObject.tag == "walkable")
+        {
+            isGrounded = true;
+        }
     }
 }
