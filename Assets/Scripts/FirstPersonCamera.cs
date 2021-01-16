@@ -25,7 +25,7 @@ public class FirstPersonCamera : MonoBehaviour
 
     void LateUpdate ()
     {
-        MouseAiming();
+        //MouseAiming();
     }
     
     void MouseAiming ()
