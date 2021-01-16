@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class MovementScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float movementSpeed;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        print("vertical" + Input.GetAxis("Vertical"));
+        //print("horizontal" + Input.GetAxis("Horizontal"));
     }
 }
